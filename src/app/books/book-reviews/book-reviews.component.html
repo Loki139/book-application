@@ -1,0 +1,21 @@
+<div fxLayout="row" style="width: 100%;">
+    <h1 fxLayoutAlign="start center" style="width: 85%;">Reviews</h1>
+    <mat-icon fxLayoutAlign="end center" style="width: 15%;" (click)="closePopUp()">close</mat-icon>
+</div>
+
+<div fxLayout="column" fxLayout="row wrap" fxLayoutGap="10px" *ngIf="!isRecords && bookReviewLsit?.length">
+    <mat-card class="example-card" *ngFor="let a of bookReviewLsit">
+        <mat-card-header>
+            <mat-card-title>{{a.book_title}}</mat-card-title>
+            <mat-card-subtitle>{{(a.book_author ? a.book_author : (a.byline ? a.byline : ''))}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{a.summary}}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="accent" (click)="goToLink(a.url)">Read Book</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div *ngIf="isRecords" style="color: red;">No Recordes Found</div>

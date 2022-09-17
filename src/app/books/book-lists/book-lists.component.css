@@ -1,0 +1,17 @@
+.mat-table,
+td,
+th:last-child {
+    text-align: center;
+}
+
+.table-container{
+    max-height: 50vh;
+    overflow: auto;
+    width:100%;
+}
+
+.mat-table,
+td,
+th:first-child {
+    text-align: center;
+}
